@@ -1,0 +1,8 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #738290;
+  color: #fffcf7;
+  box-shadow: 5px 5px 20px #888888;
+}
