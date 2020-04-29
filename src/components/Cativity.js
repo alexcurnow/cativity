@@ -1,3 +1,10 @@
 import React from 'react'
+import { Logo } from './header/Logo'
+import { Auth } from './auth/Auth'
 
-export const Cativity = () => <h1>Hello!</h1>
+export const Cativity = () => (
+  <>
+    <Logo />
+    <Auth />
+  </>
+)
