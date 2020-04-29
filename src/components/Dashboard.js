@@ -1,3 +1,3 @@
 import React from 'react'
 
-export const Dashboard = () => <Auth />
+export const Dashboard = () => <h3>Dashboard</h3>

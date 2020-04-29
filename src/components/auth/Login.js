@@ -22,7 +22,7 @@ export const Login = (props) => {
     existingUserCheck().then((exists) => {
       if (exists && exists.password === password.current.value) {
         sessionStorage.setItem('cativity_user', exists.id)
-        // props.toggle()
+        props.toggle()
       } else if (exists && exists.password !== password.current.value) {
         window.alert('Password does not match')
       } else if (!exists) {
