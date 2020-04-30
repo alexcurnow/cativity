@@ -40,8 +40,8 @@ export const CatProvider = (props) => {
   }, [])
 
   useEffect(() => {
-    console.log('****  ANIMALS APPLICATION STATE CHANGED  ****')
-  }, [animals])
+    console.log('****  CAT APPLICATION STATE CHANGED  ****')
+  }, [cats])
 
   return (
     <CatContext.Provider
