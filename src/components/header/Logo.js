@@ -1,9 +1,10 @@
 import React from 'react'
-import AppBar from '@material-ui/core/AppBar'
+import './Header.css'
+
 import Typography from '@material-ui/core/Typography'
 
 export const Logo = () => (
-  <AppBar position="static">
+  <div className="header">
     <Typography variant="h3">Cativity</Typography>
-  </AppBar>
+  </div>
 )
