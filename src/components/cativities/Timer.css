@@ -1,0 +1,16 @@
+.timerCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #738290;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin: auto;
+}
+
+.start-end-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
