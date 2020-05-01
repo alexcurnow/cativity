@@ -8,6 +8,8 @@ import DialogContent from '@material-ui/core/DialogContent'
 import { NewToyForm } from '../toys/NewToyForm'
 import { ToyProvider } from '../toys/ToyProvider'
 import { CatProvider } from '../cats/CatProvider'
+import { CativityProvider } from '../cativities/CativityProvider'
+import { CativityList } from '../cativities/CativityList'
 
 export const NavBurger = () => {
   const [visibility, setVisibility] = useState(false)
@@ -39,7 +41,7 @@ export const NavBurger = () => {
           <li onClick={toggleCatModal}>Add a New Cat</li>
           <li onClick={toggleToyModal}>Add a New Toy</li>
           <li onClick={toggleCativityListModal}>View Cativities</li>
-          <li>Add a New Cat</li>
+          <li>Remove a Cat</li>
         </div>
       </div>
       <ToyProvider>
@@ -60,9 +62,17 @@ export const NavBurger = () => {
         </ToyProvider>
       </CatProvider>
 
-      <Dialog open={cativityListModal} onClose={toggleCativityListModal}>
-        <DialogContent></DialogContent>
-      </Dialog>
+      <CatProvider>
+        <ToyProvider>
+          <CativityProvider>
+            <Dialog open={cativityListModal} onClose={toggleCativityListModal}>
+              <DialogContent>
+                <CativityList />
+              </DialogContent>
+            </Dialog>
+          </CativityProvider>
+        </ToyProvider>
+      </CatProvider>
     </>
   )
 }
