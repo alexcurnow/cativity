@@ -25,8 +25,8 @@ export const NewCatForm = (props) => {
       gender: gender.current.value,
       eyeColor: eyeColor.current.value,
       birthday: birthday.current.value,
-      weight: weight.current.value,
-      favToy: favToy.current.value,
+      weight: parseInt(weight.current.value),
+      favToy: parseInt(favToy.current.value),
       image: image.current.value,
       userId: userId,
     }).then(props.toggle)

@@ -26,6 +26,9 @@ export const NavBurger = () => {
     setCatModal(!catModal)
   }
 
+  const [cativityListModal, setCativityListModal] = useState(false)
+  const toggleCativityListModal = () => setCativityListModal(!cativityListModal)
+
   return visibility === false ? (
     <MenuIcon fontSize="large" onClick={toggle} className="burger" />
   ) : (
@@ -35,7 +38,7 @@ export const NavBurger = () => {
         <div className="dropdown__menu">
           <li onClick={toggleCatModal}>Add a New Cat</li>
           <li onClick={toggleToyModal}>Add a New Toy</li>
-          <li>Add a New Cat</li>
+          <li onClick={toggleCativityListModal}>View Cativities</li>
           <li>Add a New Cat</li>
         </div>
       </div>
@@ -56,6 +59,10 @@ export const NavBurger = () => {
           </Dialog>
         </ToyProvider>
       </CatProvider>
+
+      <Dialog open={cativityListModal} onClose={toggleCativityListModal}>
+        <DialogContent></DialogContent>
+      </Dialog>
     </>
   )
 }

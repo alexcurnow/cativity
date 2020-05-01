@@ -20,7 +20,7 @@ export const LogCativity = () => {
       <Dialog open={cativityModal} onClose={toggleCativityModal}>
         <DialogTitle>Log your Cativity!</DialogTitle>
         <DialogContent>
-          <Timer />
+          <Timer toggle={toggleCativityModal} />
         </DialogContent>
       </Dialog>
     </>
