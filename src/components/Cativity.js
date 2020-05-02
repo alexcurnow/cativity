@@ -10,7 +10,7 @@ export const Cativity = () => {
 
   return sessionStorage.getItem('cativity_user') ? (
     <>
-      <Header />
+      <Header toggle={toggle} />
       <Dashboard />
     </>
   ) : (
