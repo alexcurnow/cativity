@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import Button from '@material-ui/core/Button'
-
+import { Card, CardContent } from '@material-ui/core'
+import './Register.css'
 export const Register = (props) => {
   const fullName = useRef()
   const email = useRef()
@@ -48,66 +49,70 @@ export const Register = (props) => {
   }
 
   return (
-    <main className="container--login">
-      <form className="form--register" onSubmit={handleRegister}>
-        <h4 className="darkgray">
-          If you are not yet a user, please register a new account
-        </h4>
-        <fieldset>
-          <label htmlFor="firstName"> Full Name </label>
-          <input
-            ref={fullName}
-            type="text"
-            name="firstName"
-            className="form-control"
-            placeholder="First name"
-            required
-          />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="inputEmail"> Email address </label>
-          <input
-            ref={email}
-            type="email"
-            name="email"
-            className="form-control"
-            placeholder="Email address"
-            required
-          />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="inputPassword"> Password </label>
-          <input
-            ref={password}
-            type="password"
-            name="password"
-            className="form-control"
-            placeholder="Password"
-            required
-          />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="verifyPassword"> Verify Password </label>
-          <input
-            ref={verifyPassword}
-            type="password"
-            name="verifyPassword"
-            className="form-control"
-            placeholder="Verify password"
-            required
-          />
-        </fieldset>
-        <fieldset>
-          <Button
-            variant="contained"
-            color="primary"
-            disableElevation
-            type="submit"
-          >
-            Sign in
-          </Button>
-        </fieldset>
-      </form>
-    </main>
+    <>
+      <main className="container--register">
+        <Card>
+          <CardContent>
+            <form className="form--register" onSubmit={handleRegister}>
+              <h2 className="darkgray">Register a new account</h2>
+              <fieldset>
+                <label htmlFor="firstName"> Full Name </label>
+                <input
+                  ref={fullName}
+                  type="text"
+                  name="firstName"
+                  className="form-control"
+                  placeholder="First name"
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label htmlFor="inputEmail"> Email address </label>
+                <input
+                  ref={email}
+                  type="email"
+                  name="email"
+                  className="form-control"
+                  placeholder="Email address"
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label htmlFor="inputPassword"> Password </label>
+                <input
+                  ref={password}
+                  type="password"
+                  name="password"
+                  className="form-control"
+                  placeholder="Password"
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label htmlFor="verifyPassword"> Verify Password </label>
+                <input
+                  ref={verifyPassword}
+                  type="password"
+                  name="verifyPassword"
+                  className="form-control"
+                  placeholder="Verify password"
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  disableElevation
+                  type="submit"
+                >
+                  Sign in
+                </Button>
+              </fieldset>
+            </form>
+          </CardContent>
+        </Card>
+      </main>
+    </>
   )
 }

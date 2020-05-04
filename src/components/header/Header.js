@@ -6,6 +6,7 @@ import './Header.css'
 export const Header = (props) => {
   return sessionStorage.getItem('cativity_user') ? (
     <div className="header">
+      <div className="nuthin"></div>
       <Logo />
       <NavBurger toggle={props.toggle} />
     </div>

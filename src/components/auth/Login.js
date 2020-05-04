@@ -1,5 +1,7 @@
 import React, { useRef } from 'react'
 import Button from '@material-ui/core/Button'
+import { Card, CardContent } from '@material-ui/core'
+import './Login.css'
 
 export const Login = (props) => {
   const email = useRef()
@@ -33,42 +35,46 @@ export const Login = (props) => {
 
   return (
     <main className="container--login">
-      <form className="form--login" onSubmit={handleLogin}>
-        <h2>Please sign in</h2>
-        <fieldset>
-          <label htmlFor="inputEmail"> Email address </label>
-          <input
-            ref={email}
-            type="email"
-            id="email"
-            className="form-control"
-            placeholder="Email address"
-            required
-            autoFocus
-          />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="inputPassword"> Password </label>
-          <input
-            ref={password}
-            type="password"
-            id="password"
-            className="form-control"
-            placeholder="Password"
-            required
-          />
-        </fieldset>
-        <fieldset>
-          <Button
-            variant="contained"
-            color="primary"
-            disableElevation
-            type="submit"
-          >
-            Sign in
-          </Button>
-        </fieldset>
-      </form>
+      <Card>
+        <CardContent>
+          <form className="form--login" onSubmit={handleLogin}>
+            <h2>Please sign in</h2>
+            <fieldset>
+              <label htmlFor="inputEmail"> Email address </label>
+              <input
+                ref={email}
+                type="email"
+                id="email"
+                className="form-control"
+                placeholder="Email address"
+                required
+                autoFocus
+              />
+            </fieldset>
+            <fieldset>
+              <label htmlFor="inputPassword"> Password </label>
+              <input
+                ref={password}
+                type="password"
+                id="password"
+                className="form-control"
+                placeholder="Password"
+                required
+              />
+            </fieldset>
+            <fieldset>
+              <Button
+                variant="contained"
+                color="primary"
+                disableElevation
+                type="submit"
+              >
+                Sign in
+              </Button>
+            </fieldset>
+          </form>
+        </CardContent>
+      </Card>
     </main>
   )
 }
