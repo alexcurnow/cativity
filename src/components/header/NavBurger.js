@@ -11,7 +11,7 @@ import { CatProvider } from '../cats/CatProvider'
 import { CativityProvider } from '../cativities/CativityProvider'
 import { CativityList } from '../cativities/CativityList'
 
-export const NavBurger = () => {
+export const NavBurger = (props) => {
   const [visibility, setVisibility] = useState(false)
 
   const toggle = () => {
@@ -28,6 +28,11 @@ export const NavBurger = () => {
     setCatModal(!catModal)
   }
 
+  const logOut = () => {
+    sessionStorage.clear()
+    props.toggle()
+  }
+
   const [cativityListModal, setCativityListModal] = useState(false)
   const toggleCativityListModal = () => setCativityListModal(!cativityListModal)
 
@@ -42,6 +47,7 @@ export const NavBurger = () => {
           <li onClick={toggleToyModal}>Add a New Toy</li>
           <li onClick={toggleCativityListModal}>View Cativities</li>
           <li>Remove a Cat</li>
+          <li onClick={logOut}>Log Out</li>
         </div>
       </div>
       <ToyProvider>

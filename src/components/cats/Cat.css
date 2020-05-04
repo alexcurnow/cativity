@@ -1,0 +1,23 @@
+.catList {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  overflow-x: auto;
+  width: 310px;
+  margin: 20px 0 20px 0;
+}
+
+.catsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.catCard {
+  min-width: 300px;
+  margin: 0 20px 0 20px;
+  list-style: none;
+}
+
+.catList::-webkit-scrollbar {
+  display: none;
+}
