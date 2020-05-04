@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { CatContext } from './CatProvider'
 import { ToyContext } from '../toys/ToyProvider'
 import { Button } from '@material-ui/core'
@@ -7,6 +7,9 @@ export const NewCatForm = (props) => {
   const { addCat } = useContext(CatContext)
   const { toys } = useContext(ToyContext)
 
+  const [image, setImage] = useState('')
+  const [loading, setLoading] = useState(false)
+
   const name = useRef()
   const breed = useRef()
   const gender = useRef()
@@ -14,7 +17,6 @@ export const NewCatForm = (props) => {
   const birthday = useRef()
   const weight = useRef()
   const favToy = useRef()
-  const image = useRef()
   const userId = parseInt(sessionStorage.getItem('cativity_user'))
   const filteredToys = toys.filter((toy) => toy.userId === userId)
 
@@ -27,9 +29,27 @@ export const NewCatForm = (props) => {
       birthday: birthday.current.value,
       weight: parseInt(weight.current.value),
       favToy: parseInt(favToy.current.value),
-      image: image.current.value,
+      image: image,
       userId: userId,
     }).then(props.toggle)
+  }
+
+  const uploadImage = async (e) => {
+    const files = e.target.files
+    const data = new FormData()
+    data.append('file', files[0])
+    data.append('upload_preset', 'cativity')
+    setLoading(true)
+    const res = await fetch(
+      'https://api.cloudinary.com/v1_1/alexcurnow/image/upload',
+      {
+        method: 'POST',
+        body: data,
+      }
+    )
+    const file = await res.json()
+    setImage(file.secure_url)
+    setLoading(false)
   }
 
   return (
@@ -151,8 +171,8 @@ export const NewCatForm = (props) => {
           <label htmlFor="image">Upload an image: </label>
           <input
             type="file"
-            name="image"
-            ref={image}
+            name="file"
+            onChange={uploadImage}
             required
             autoFocus
             className="form-control"
