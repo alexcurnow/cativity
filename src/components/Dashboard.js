@@ -7,7 +7,6 @@ import { CatList } from './cats/CatList'
 export const Dashboard = () => {
   return (
     <>
-      <h3>Dashboard</h3>
       <div className="catsContainer">
         <CatProvider>
           <CatList />

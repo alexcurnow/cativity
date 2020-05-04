@@ -4,7 +4,7 @@ import './Cat.css'
 
 export const Cat = ({ cat }) => {
   return (
-    <Card variant="outlined" className="catContainer">
+    <Card variant="outlined" className="catCard">
       <CardContent>
         <img
           className="catImage"

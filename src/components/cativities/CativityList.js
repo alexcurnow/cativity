@@ -13,7 +13,7 @@ export const CativityList = () => {
   const filteredCats = cats.filter((c) => c.userId === userId)
   const filteredToys = toys.filter((t) => t.userId === userId)
   const filteredCativities = cativities.filter((c) => {
-    return filteredCats.map((cat) => c.catId === cat.id)
+    return filteredCats.find((cat) => c.catId === cat.id)
   })
 
   return (
@@ -21,6 +21,7 @@ export const CativityList = () => {
       {filteredCativities.map((cativity) => {
         const foundCat = filteredCats.find((c) => c.id === cativity.catId)
         const foundToy = filteredToys.find((t) => t.id === cativity.toyId)
+
         return (
           <CativityHTML
             key={cativity.id}

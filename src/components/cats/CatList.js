@@ -9,7 +9,7 @@ export const CatList = () => {
   const filteredCats = cats.filter((c) => c.userId === userId)
 
   return (
-    <div className="cats">
+    <div className="catList">
       {filteredCats.map((cat) => (
         <Cat key={cat.id} cat={cat} className="catSlide" />
       ))}

@@ -179,17 +179,21 @@ export const NewCatForm = (props) => {
           />
         </div>
       </fieldset>
-      <Button
-        type="submit"
-        color="primary"
-        variant="contained"
-        onClick={(e) => {
-          e.preventDefault()
-          constructNewCat()
-        }}
-      >
-        Save New Cat
-      </Button>
+      {loading ? (
+        <h3>Loading...</h3>
+      ) : (
+        <Button
+          type="submit"
+          color="primary"
+          variant="contained"
+          onClick={(e) => {
+            e.preventDefault()
+            constructNewCat()
+          }}
+        >
+          Save New Cat
+        </Button>
+      )}
     </form>
   )
 }
