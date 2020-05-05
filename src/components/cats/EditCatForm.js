@@ -30,7 +30,7 @@ export const EditCatForm = (props) => {
       birthday: updatedCat.birthday,
       weight: parseInt(updatedCat.weight),
       favToy: parseInt(updatedCat.favToy),
-      image: updatedCat.image,
+      image: image ? image : updatedCat.image,
       userId: userId,
     }).then(props.toggle)
   }
