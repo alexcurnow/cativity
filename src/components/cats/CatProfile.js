@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Button, Dialog, DialogContent } from '@material-ui/core'
+import { EditCatForm } from './EditCatForm'
 
 export const CatProfile = ({ cat, toy }) => {
+  const [modal, setModal] = useState(false)
+  const toggle = () => setModal(!modal)
+
   return (
     <div className="catProfile">
       <fieldset>
@@ -13,6 +18,14 @@ export const CatProfile = ({ cat, toy }) => {
         <p>Birthday: {cat.birthday}</p>
         <p>Favorite Toy: {toy.name}</p>
       </fieldset>
+      <Button variant="contained" color="primary" onClick={toggle}>
+        Edit
+      </Button>
+      <Dialog open={modal} onClose={toggle}>
+        <DialogContent>
+          <EditCatForm cat={cat} toy={toy} toggle={toggle} />
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }

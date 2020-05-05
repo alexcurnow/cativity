@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { CatContext } from './CatProvider'
 import { Cat } from './Cat'
 import './Cat.css'
@@ -7,8 +7,14 @@ import { ToyContext } from '../toys/ToyProvider'
 export const CatList = () => {
   const { cats } = useContext(CatContext)
   const { toys } = useContext(ToyContext)
-  const userId = parseInt(sessionStorage.getItem('cativity_user'))
-  const filteredCats = cats.filter((c) => c.userId === userId)
+
+  const [filteredCats, setFilteredCats] = useState([])
+
+  useEffect(() => {
+    const userId = parseInt(sessionStorage.getItem('cativity_user'))
+
+    setFilteredCats(cats.filter((c) => c.userId === userId))
+  }, [cats])
 
   return (
     <div className="catList">

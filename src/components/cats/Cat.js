@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { Card, CardContent, Dialog, DialogContent } from '@material-ui/core'
 import './Cat.css'
-import { CatProvider } from './CatProvider'
 import { CatProfile } from './CatProfile'
-import { ToyProvider } from '../toys/ToyProvider'
 
 export const Cat = ({ cat, toy }) => {
   const [modal, setModal] = useState(false)
@@ -28,11 +26,7 @@ export const Cat = ({ cat, toy }) => {
 
       <Dialog open={modal} onClose={toggle}>
         <DialogContent>
-          <CatProvider>
-            <ToyProvider>
-              <CatProfile cat={cat} toy={toy} />
-            </ToyProvider>
-          </CatProvider>
+          <CatProfile cat={cat} toy={toy} />
         </DialogContent>
       </Dialog>
     </>
