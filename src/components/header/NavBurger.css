@@ -28,7 +28,7 @@
 
 .dropdown__menu li:hover {
   cursor: pointer;
-  background-color: #c2d8b9;
+  background-color: #bcebcb;
   transition: 0.2s;
 }
 

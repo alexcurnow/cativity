@@ -1,21 +1,30 @@
 .catList {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-between;
   overflow-x: auto;
   width: 310px;
-  margin: 20px 0 20px 0;
 }
 
 .catsContainer {
   display: flex;
   justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 500px;
 }
 
 .catCard {
+  display: flex;
+  justify-content: space-around;
   min-width: 300px;
-  margin: 0 20px 0 20px;
+  height: 100%;
+  margin-right: 20px;
   list-style: none;
+}
+
+.catCard:first-child {
+  height: 100%;
 }
 
 .catList::-webkit-scrollbar {
