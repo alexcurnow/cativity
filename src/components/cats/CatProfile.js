@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Button, Dialog, DialogContent } from '@material-ui/core'
 import { EditCatForm } from './EditCatForm'
 import { NewToyForm } from '../toys/NewToyForm'
+import { CatContext } from './CatProvider'
 import './CatProfile.css'
 
 export const CatProfile = ({ cat, toy }) => {
+  const { removeCat } = useContext(CatContext)
   const [modal, setModal] = useState(false)
   const toggle = () => setModal(!modal)
 
@@ -28,8 +30,23 @@ export const CatProfile = ({ cat, toy }) => {
           </span>
         </p>
       </fieldset>
-      <Button variant="contained" color="primary" onClick={toggle}>
+      <Button color="primary" onClick={toggle} className="editBtn">
         Edit
+      </Button>
+      <Button
+        color="secondary"
+        className="removeBtn"
+        onClick={(e) => {
+          e.preventDefault()
+          const confirm = window.confirm(
+            'Are you sure you want to remove this cat?'
+          )
+          if (confirm === true) {
+            removeCat(cat)
+          }
+        }}
+      >
+        Remove Cat Profile
       </Button>
       <Dialog open={modal} onClose={toggle}>
         <DialogContent>
