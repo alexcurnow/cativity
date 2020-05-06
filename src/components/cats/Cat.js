@@ -10,12 +10,8 @@ export const Cat = ({ cat, toy }) => {
   return (
     <>
       <Card variant="outlined" className="catCard" onClick={toggle}>
-        <CardContent>
-          <img
-            className="catImage"
-            src={cat.image}
-            style={{ width: '100%', height: 'auto' }}
-          />
+        <CardContent className="cardContent">
+          <img className="catImage" src={cat.image} />
           <h3>{cat.name}</h3>
           <fieldset className="catInfo">
             <li>Breed: {cat.breed}</li>

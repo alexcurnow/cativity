@@ -21,6 +21,7 @@
   height: 100%;
   margin-right: 20px;
   list-style: none;
+  min-height: 400px;
 }
 
 .catCard:first-child {
@@ -29,4 +30,14 @@
 
 .catList::-webkit-scrollbar {
   display: none;
+}
+
+.catImage {
+  height: auto;
+  width: 100%;
+}
+
+.cardContent {
+  display: flex;
+  flex-flow: column wrap;
 }

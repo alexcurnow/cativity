@@ -4,6 +4,8 @@ import { Dashboard } from './Dashboard'
 import { Header } from './header/Header'
 import { Logo } from './header/Logo'
 import './Cativity.css'
+import { CatProvider } from './cats/CatProvider'
+import { ToyProvider } from './toys/ToyProvider'
 
 export const Cativity = () => {
   const [check, update] = useState(false)
@@ -11,8 +13,12 @@ export const Cativity = () => {
 
   return sessionStorage.getItem('cativity_user') ? (
     <>
-      <Header toggle={toggle} />
-      <Dashboard />
+      <CatProvider>
+        <ToyProvider>
+          <Header toggle={toggle} />
+          <Dashboard />
+        </ToyProvider>
+      </CatProvider>
     </>
   ) : (
     <>

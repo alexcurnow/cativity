@@ -16,9 +16,13 @@ export const CativityList = () => {
     return filteredCats.find((cat) => c.catId === cat.id)
   })
 
+  const sortedCativities = filteredCativities.sort(
+    (a, b) => b.timestamp - a.timestamp
+  )
+
   return (
     <div className="cativities">
-      {filteredCativities.map((cativity) => {
+      {sortedCativities.map((cativity) => {
         const foundCat = filteredCats.find((c) => c.id === cativity.catId)
         const foundToy = filteredToys.find((t) => t.id === cativity.toyId)
 

@@ -20,7 +20,7 @@ export const CativityNotesForm = (props) => {
   const buildNewCativity = () => {
     addCativity({
       date: new Date().toLocaleString(),
-      // length: props.length,
+      timestamp: new Date().getTime(),
       toyId: parseInt(toy.current.value),
       catId: parseInt(cat.current.value),
       notes: notes.current.value,
