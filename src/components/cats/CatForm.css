@@ -1,0 +1,21 @@
+.addToy {
+  background-color: #87d68d;
+  color: #f7fff6;
+  font-weight: 800;
+  padding: 0px 8px 5px 8px;
+  border-radius: 3px;
+  border: 1px solid #8491a3;
+  font-size: 1em;
+}
+
+.newCatForm {
+  font-size: 1.5em;
+}
+
+.newCatForm input {
+  font-size: 0.75em;
+  max-width: 240px;
+}
+.newCatForm select {
+  font-size: 0.75em;
+}
