@@ -1,7 +1,9 @@
 import React, { useContext, useRef, useState } from 'react'
 import { CatContext } from './CatProvider'
 import { ToyContext } from '../toys/ToyProvider'
-import { Button } from '@material-ui/core'
+import { NewToyForm } from '../toys/NewToyForm'
+import { Button, DialogContent, Dialog } from '@material-ui/core'
+import './CatForm.css'
 
 export const NewCatForm = (props) => {
   const { addCat } = useContext(CatContext)
@@ -9,6 +11,9 @@ export const NewCatForm = (props) => {
 
   const [image, setImage] = useState('')
   const [loading, setLoading] = useState(false)
+
+  const [modal, setModal] = useState(false)
+  const toggle = () => setModal(!modal)
 
   const name = useRef()
   const breed = useRef()
@@ -54,57 +59,48 @@ export const NewCatForm = (props) => {
 
   return (
     <form className="newCatForm">
+      <h3>New Cat</h3>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="name">
-            Cat's name:
-            <input
-              type="text"
-              name="name"
-              ref={name}
-              required
-              autoFocus
-              className="form-control"
-              placeholder="Enter cat's name"
-            />
-          </label>
+          <input
+            type="text"
+            name="name"
+            ref={name}
+            required
+            autoFocus
+            className="form-control"
+            placeholder="Enter cat's name"
+          />
         </div>
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="breed">
-            Breed:
-            <input
-              type="text"
-              name="breed"
-              ref={breed}
-              required
-              autoFocus
-              className="form-control"
-              placeholder="Enter cat's breed"
-            />
-          </label>
+          <input
+            type="text"
+            name="breed"
+            ref={breed}
+            required
+            autoFocus
+            className="form-control"
+            placeholder="Enter cat's breed"
+          />
         </div>
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="eyeColor">
-            Eye color:
-            <input
-              type="text"
-              name="eyeColor"
-              ref={eyeColor}
-              required
-              autoFocus
-              className="form-control"
-              placeholder="Enter cat's eye color"
-            />
-          </label>
+          <input
+            type="text"
+            name="eyeColor"
+            ref={eyeColor}
+            required
+            autoFocus
+            className="form-control"
+            placeholder="Enter cat's eye color"
+          />
         </div>
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="gender">Select your cat's gender </label>
           <select
             defaultValue=""
             name="gender"
@@ -119,23 +115,19 @@ export const NewCatForm = (props) => {
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="weight">
-            Weight (lbs):
-            <input
-              type="text"
-              name="weight"
-              ref={weight}
-              required
-              autoFocus
-              className="form-control"
-              placeholder="Enter cat's weight"
-            />
-          </label>
+          <input
+            type="text"
+            name="weight"
+            ref={weight}
+            required
+            autoFocus
+            className="form-control"
+            placeholder="Enter cat's weight"
+          />
         </div>
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="birthday">Birthday: </label>
           <input
             type="date"
             name="birthday"
@@ -148,7 +140,6 @@ export const NewCatForm = (props) => {
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="favToy">Favorite toy: </label>
           <select
             defaultValue=""
             name="gender"
@@ -164,11 +155,13 @@ export const NewCatForm = (props) => {
               )
             })}
           </select>
+          <span className="addToy" onClick={toggle}>
+            +
+          </span>
         </div>
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="image">Upload an image: </label>
           <input
             type="file"
             name="file"
@@ -194,6 +187,11 @@ export const NewCatForm = (props) => {
           Save New Cat
         </Button>
       )}
+      <Dialog open={modal} onClose={toggle}>
+        <DialogContent>
+          <NewToyForm toggle={toggle} />
+        </DialogContent>
+      </Dialog>
     </form>
   )
 }

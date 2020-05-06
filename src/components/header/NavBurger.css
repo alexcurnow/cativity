@@ -16,14 +16,18 @@
   width: 200px;
   list-style: none;
   background-color: #e4f0d0;
+  border-radius: 3px;
 }
 
 .dropdown__menu li {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
   width: auto;
   border-bottom: 1px solid #a1b5d8;
+  border-radius: 3px;
   padding: 5px 0 5px 0;
+  height: 50px;
 }
 
 .dropdown__menu li:hover {
