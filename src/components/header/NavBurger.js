@@ -50,35 +50,25 @@ export const NavBurger = (props) => {
           <li onClick={logOut}>Log Out</li>
         </div>
       </div>
-      <ToyProvider>
-        <Dialog open={modal} onClose={toggleToyModal}>
+      <Dialog open={modal} onClose={toggleToyModal}>
+        <DialogContent>
+          <NewToyForm toggle={toggle} />
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={catModal} onClose={toggleCatModal}>
+        <DialogContent>
+          <NewCatForm toggle={toggle} />
+        </DialogContent>
+      </Dialog>
+
+      <CativityProvider>
+        <Dialog open={cativityListModal} onClose={toggleCativityListModal}>
           <DialogContent>
-            <NewToyForm toggle={toggle} />
+            <CativityList />
           </DialogContent>
         </Dialog>
-      </ToyProvider>
-
-      <CatProvider>
-        <ToyProvider>
-          <Dialog open={catModal} onClose={toggleCatModal}>
-            <DialogContent>
-              <NewCatForm toggle={toggle} />
-            </DialogContent>
-          </Dialog>
-        </ToyProvider>
-      </CatProvider>
-
-      <CatProvider>
-        <ToyProvider>
-          <CativityProvider>
-            <Dialog open={cativityListModal} onClose={toggleCativityListModal}>
-              <DialogContent>
-                <CativityList />
-              </DialogContent>
-            </Dialog>
-          </CativityProvider>
-        </ToyProvider>
-      </CatProvider>
+      </CativityProvider>
     </>
   )
 }

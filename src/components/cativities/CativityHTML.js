@@ -15,7 +15,7 @@ export const CativityHTML = ({ cativity, cat, toy }) => {
             Time of Cativity: {time}
           </Typography>
           <Typography variant="body1">
-            Toy played with:{toy.name}
+            Toy played with: {toy.name}
             {}
           </Typography>
           <Typography variant="body1">Notes: {cativity.notes}</Typography>
