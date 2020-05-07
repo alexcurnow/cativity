@@ -70,7 +70,7 @@ export const Timer = (props) => {
             </Button>
           )}
         </div>
-        <Dialog open={modal} toggle={toggle}>
+        <Dialog open={modal} onClose={toggle}>
           <DialogContent>
             <ToyProvider>
               <CatProvider>

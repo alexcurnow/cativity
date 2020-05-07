@@ -1,3 +1,12 @@
 body {
-  background-color: #f7fff6;
+  background-color: #fff;
+  color: #3c3744;
+}
+
+.MuiCardContent-root {
+  background-color: #fbfff1;
+}
+
+fieldset {
+  background-color: #fbfff1;
 }

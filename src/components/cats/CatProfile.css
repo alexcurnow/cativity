@@ -12,3 +12,7 @@
   display: flex;
   justify-content: space-around;
 }
+
+fieldset {
+  font-size: 1.25em;
+}

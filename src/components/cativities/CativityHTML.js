@@ -6,21 +6,24 @@ export const CativityHTML = ({ cativity, cat, toy }) => {
   const [date, time] = cativity.date.split(',')
   return (
     <>
-      <Card className="cativityCard">
-        <CardContent>
-          <Typography variant="h3">{cat.name}</Typography>
-          <Typography variant="body1">
-            Date of Cativity: {date}
-            <br />
-            Time of Cativity: {time}
-          </Typography>
-          <Typography variant="body1">
-            Toy played with: {toy.name}
-            {}
-          </Typography>
-          <Typography variant="body1">Notes: {cativity.notes}</Typography>
-        </CardContent>
-      </Card>
+      <div className="cativityCard">
+        <Card>
+          <CardContent>
+            <Typography variant="h3">{cat.name}</Typography>
+            <Typography variant="body1">
+              <b>Date of Cativity:</b> {date}
+              <br />
+              <b>Time of Cativity:</b> {time}
+            </Typography>
+            <Typography variant="body1">
+              <b>Toy played with:</b> {toy.name}
+            </Typography>
+            <Typography variant="body1">
+              <b>Notes:</b> {cativity.notes}
+            </Typography>
+          </CardContent>
+        </Card>
+      </div>
     </>
   )
 }

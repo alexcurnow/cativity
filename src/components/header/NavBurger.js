@@ -44,7 +44,6 @@ export const NavBurger = (props) => {
           <li onClick={toggleCatModal}>Add a New Cat</li>
           <li onClick={toggleToyModal}>Add a New Toy</li>
           <li onClick={toggleCativityListModal}>View Cativities</li>
-          <li>Remove a Cat</li>
           <li onClick={logOut}>Log Out</li>
         </div>
       </div>

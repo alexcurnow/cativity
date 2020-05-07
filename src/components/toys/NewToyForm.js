@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from 'react'
 import { ToyContext } from './ToyProvider'
 import Button from '@material-ui/core/Button'
+import './ToyForm.css'
 
 export const NewToyForm = (props) => {
   const { addToy } = useContext(ToyContext)
@@ -24,7 +25,6 @@ export const NewToyForm = (props) => {
       <h2 className="newToyForm__title">New Toy</h2>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="newToyName">Toy name: </label>
           <input
             type="text"
             ref={name}

@@ -3,6 +3,7 @@ import { ToyContext } from '../toys/ToyProvider'
 import { CatContext } from '../cats/CatProvider'
 import { Button } from '@material-ui/core'
 import { CativityContext } from '../cativities/CativityProvider'
+import './Cativities.css'
 
 export const CativityNotesForm = (props) => {
   const { toys } = useContext(ToyContext)
@@ -29,11 +30,13 @@ export const CativityNotesForm = (props) => {
 
   return (
     <form className="cativityNotesForm">
+      <label>
+        Your Cativity play date was:
+        <br />
+        <span className="time">{props.length[0]}</span>mins and{' '}
+        <span className="time">{props.length[1]}</span>s long
+      </label>
       <fieldset>
-        <label>
-          Your Cativity play date was {props.length[0]}mins and{' '}
-          {props.length[1]}s long
-        </label>
         <div>
           <label>Which toy did you play with?</label>
           <select ref={toy}>
