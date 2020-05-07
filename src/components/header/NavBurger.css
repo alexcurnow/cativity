@@ -12,10 +12,11 @@
   font-size: 1.3em;
   margin-top: 32px;
   z-index: 2;
-  color: #738290;
+  color: #3c3744;
+  font-weight: bolder;
   width: 200px;
   list-style: none;
-  background-color: #bcebcb;
+  background-color: #fbfff1;
   border-radius: 3px;
 }
 
@@ -24,7 +25,7 @@
   justify-content: center;
   align-items: center;
   width: auto;
-  border-bottom: 1px solid #a1b5d8;
+  border-bottom: 1px solid;
   border-radius: 3px;
   padding: 5px 0 5px 0;
   height: 50px;
@@ -32,7 +33,7 @@
 
 .dropdown__menu li:hover {
   cursor: pointer;
-  background-color: #87d68d;
+  background-color: #a1b5d8;
   transition: 0.2s;
 }
 

@@ -1,3 +1,22 @@
 .cativityCard {
   margin-bottom: 20px;
 }
+
+.time {
+  color: red;
+}
+
+.cativityNotesForm {
+  font-size: 1.25em;
+}
+
+.cativityNotesForm select {
+  font-size: 0.75em;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.cativityNotesForm input {
+  font-size: 0.75em;
+  margin: 5px;
+}
