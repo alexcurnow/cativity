@@ -15,7 +15,7 @@
   color: #738290;
   width: 200px;
   list-style: none;
-  background-color: #e4f0d0;
+  background-color: #bcebcb;
   border-radius: 3px;
 }
 
@@ -32,7 +32,7 @@
 
 .dropdown__menu li:hover {
   cursor: pointer;
-  background-color: #bcebcb;
+  background-color: #87d68d;
   transition: 0.2s;
 }
 

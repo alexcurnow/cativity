@@ -30,24 +30,32 @@ export const CatProfile = ({ cat, toy }) => {
           </span>
         </p>
       </fieldset>
-      <Button color="primary" onClick={toggle} className="editBtn">
-        Edit
-      </Button>
-      <Button
-        color="secondary"
-        className="removeBtn"
-        onClick={(e) => {
-          e.preventDefault()
-          const confirm = window.confirm(
-            'Are you sure you want to remove this cat?'
-          )
-          if (confirm === true) {
-            removeCat(cat)
-          }
-        }}
-      >
-        Remove Cat Profile
-      </Button>
+      <div className="profileBtns">
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={toggle}
+          className="editBtn"
+        >
+          Edit
+        </Button>
+        <Button
+          variant="outlined"
+          color="secondary"
+          className="removeBtn"
+          onClick={(e) => {
+            e.preventDefault()
+            const confirm = window.confirm(
+              'Are you sure you want to remove this cat?'
+            )
+            if (confirm === true) {
+              removeCat(cat)
+            }
+          }}
+        >
+          Remove Cat Profile
+        </Button>
+      </div>
       <Dialog open={modal} onClose={toggle}>
         <DialogContent>
           <EditCatForm cat={cat} toy={toy} toggle={toggle} />

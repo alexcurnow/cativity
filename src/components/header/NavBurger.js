@@ -6,8 +6,6 @@ import { NewCatForm } from '../cats/NewCatForm'
 import Dialog from '@material-ui/core/Dialog'
 import DialogContent from '@material-ui/core/DialogContent'
 import { NewToyForm } from '../toys/NewToyForm'
-import { ToyProvider } from '../toys/ToyProvider'
-import { CatProvider } from '../cats/CatProvider'
 import { CativityProvider } from '../cativities/CativityProvider'
 import { CativityList } from '../cativities/CativityList'
 
@@ -52,13 +50,13 @@ export const NavBurger = (props) => {
       </div>
       <Dialog open={modal} onClose={toggleToyModal}>
         <DialogContent>
-          <NewToyForm toggle={toggle} />
+          <NewToyForm toggle={toggleToyModal} />
         </DialogContent>
       </Dialog>
 
       <Dialog open={catModal} onClose={toggleCatModal}>
         <DialogContent>
-          <NewCatForm toggle={toggle} />
+          <NewCatForm toggle={toggleCatModal} />
         </DialogContent>
       </Dialog>
 

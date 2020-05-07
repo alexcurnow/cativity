@@ -14,3 +14,10 @@
   justify-content: center;
   margin-top: 10px;
 }
+
+.timer {
+  height: 200px;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+}
