@@ -36,50 +36,52 @@ export const Timer = (props) => {
 
   return (
     <>
-      <div className="timerCircle">
-        {seconds < 10 && minutes < 10 ? (
-          <div>
-            0{minutes}:0{seconds}
-          </div>
-        ) : (
-          <div>
-            {minutes}:{seconds}
-          </div>
-        )}
+      <div className="timer">
+        <div className="timerCircle">
+          {seconds < 10 && minutes < 10 ? (
+            <div>
+              0{minutes}:0{seconds}
+            </div>
+          ) : (
+            <div>
+              {minutes}:{seconds}
+            </div>
+          )}
+        </div>
+        <div className="start-end-buttons">
+          {isRunning ? (
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={() => {
+                setIsRunning(false)
+                toggle()
+              }}
+            >
+              End Cativity
+            </Button>
+          ) : (
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => setIsRunning(true)}
+            >
+              Start Cativity
+            </Button>
+          )}
+        </div>
+        <Dialog open={modal} toggle={toggle}>
+          <DialogContent>
+            <ToyProvider>
+              <CatProvider>
+                <CativityProvider>
+                  <CativityNotesForm length={length} toggle={props.toggle} />
+                </CativityProvider>
+              </CatProvider>
+            </ToyProvider>
+          </DialogContent>
+        </Dialog>
       </div>
-      <div className="start-end-buttons">
-        {isRunning ? (
-          <Button
-            variant="contained"
-            color="secondary"
-            onClick={() => {
-              setIsRunning(false)
-              toggle()
-            }}
-          >
-            End Cativity
-          </Button>
-        ) : (
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => setIsRunning(true)}
-          >
-            Start Cativity
-          </Button>
-        )}
-      </div>
-      <Dialog open={modal} toggle={toggle}>
-        <DialogContent>
-          <ToyProvider>
-            <CatProvider>
-              <CativityProvider>
-                <CativityNotesForm length={length} toggle={props.toggle} />
-              </CativityProvider>
-            </CatProvider>
-          </ToyProvider>
-        </DialogContent>
-      </Dialog>
     </>
   )
 }
