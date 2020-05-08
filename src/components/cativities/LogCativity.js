@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Dialog, DialogTitle, DialogContent } from '@material-ui/core'
 import { Timer } from './Timer'
+import './LogCativity.css'
 
 export const LogCativity = () => {
   const [cativityModal, setCativityModal] = useState(false)
@@ -11,16 +12,21 @@ export const LogCativity = () => {
       <Button
         variant="contained"
         color="secondary"
+        size="small"
         onClick={toggleCativityModal}
         className="logNewCativity"
       >
-        Log a new Cativity!
+        <p className="logCativityText">Log a new Cativity!</p>
       </Button>
 
       <Dialog open={cativityModal} onClose={toggleCativityModal}>
-        <DialogTitle>Log your Cativity!</DialogTitle>
+        <DialogTitle>
+          <p className="startCativityText">Start your Cativity</p>
+        </DialogTitle>
         <DialogContent>
-          <Timer toggle={toggleCativityModal} />
+          <div className="timerContainer">
+            <Timer toggle={toggleCativityModal} />
+          </div>
         </DialogContent>
       </Dialog>
     </>

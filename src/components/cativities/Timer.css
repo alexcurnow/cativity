@@ -4,20 +4,28 @@
   align-items: center;
   border: 3px solid #00cecb;
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   margin: auto;
+  font-size: 1.5em;
 }
 
 .start-end-buttons {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  width: 100%;
 }
 
 .timer {
   height: 200px;
-  width: 160px;
+  width: 200px;
   display: flex;
   flex-direction: column;
+}
+
+.startStop {
+  font-size: 1.5em;
+  margin: 0;
+  width: 200px;
 }

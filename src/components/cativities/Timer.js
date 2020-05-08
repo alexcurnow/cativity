@@ -58,7 +58,7 @@ export const Timer = (props) => {
                 toggle()
               }}
             >
-              End Cativity
+              <p className="startStop">End Cativity</p>
             </Button>
           ) : (
             <Button
@@ -66,7 +66,7 @@ export const Timer = (props) => {
               color="primary"
               onClick={() => setIsRunning(true)}
             >
-              Start Cativity
+              <p className="startStop">Start Cativity</p>
             </Button>
           )}
         </div>
