@@ -9,6 +9,7 @@ export const CativityHTML = ({ cativity, cat, toy }) => {
       <div className="cativityCard">
         <Card>
           <CardContent>
+            <img src={cat.image} className="catImg" />
             <Typography variant="h3">{cat.name}</Typography>
             <Typography variant="body1">
               <b>Date of Cativity:</b> {date}
