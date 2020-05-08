@@ -20,7 +20,7 @@
 .newCatForm input {
   font-size: 0.75em;
   max-width: 240px;
-  background-color: #fff;
+  background-color: #eee;
 }
 .newCatForm select {
   font-size: 0.75em;
