@@ -12,10 +12,14 @@ export const Cat = ({ cat, toy }) => {
       <Card variant="outlined" className="catCard" onClick={toggle}>
         <CardContent className="cardContent">
           <img className="catImage" src={cat.image} />
-          <h3>{cat.name}</h3>
+          <h1>{cat.name}</h1>
           <fieldset className="catInfo">
-            <li>Breed: {cat.breed}</li>
-            <li>Eye color: {cat.eyeColor}</li>
+            <li>
+              <b>Breed:</b> {cat.breed}
+            </li>
+            <li>
+              <b>Eye color:</b> {cat.eyeColor}
+            </li>
           </fieldset>
         </CardContent>
       </Card>

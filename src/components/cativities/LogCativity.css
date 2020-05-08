@@ -1,0 +1,15 @@
+.logCativityText {
+  font-size: 1.75em;
+  margin: 0;
+  padding: 5px;
+}
+
+.startCativityText {
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+
+.timerContainer {
+  display: flex;
+  justify-content: center;
+}

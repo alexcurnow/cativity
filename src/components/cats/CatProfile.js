@@ -18,13 +18,23 @@ export const CatProfile = ({ cat, toy }) => {
       <fieldset>
         <img src={cat.image} style={{ width: '100%', height: 'auto' }} />
         <h3>{cat.name}</h3>
-        <p>Breed: {cat.breed}</p>
-        <p>Gender: {cat.gender}</p>
-        <p>Weight: {cat.weight}</p>
-        <p>Eye Color: {cat.eyeColor}</p>
-        <p>Birthday: {cat.birthday}</p>
         <p>
-          Favorite Toy: {toy.name}{' '}
+          <b>Breed:</b> {cat.breed}
+        </p>
+        <p>
+          <b>Gender:</b> {cat.gender}
+        </p>
+        <p>
+          <b>Weight:</b> {cat.weight}
+        </p>
+        <p>
+          <b>Eye Color:</b> {cat.eyeColor}
+        </p>
+        <p>
+          <b>Birthday:</b> {cat.birthday}
+        </p>
+        <p className="favToyText">
+          <b>Favorite Toy: </b> {toy.name}{' '}
           <span className="addToy" onClick={toggleToyForm}>
             +
           </span>
