@@ -3,7 +3,8 @@
   align-items: center;
   justify-content: space-between;
   overflow-x: auto;
-  width: 310px;
+  width: 355px;
+  height: 90%;
 }
 
 .catsContainer {
@@ -11,13 +12,13 @@
   justify-content: center;
   align-content: center;
   align-items: center;
-  height: 500px;
+  height: 600px;
 }
 
 .catCard {
   display: flex;
   justify-content: space-around;
-  min-width: 300px;
+  min-width: 350px;
   height: 100%;
   margin-right: 20px;
   list-style: none;

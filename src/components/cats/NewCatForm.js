@@ -128,6 +128,7 @@ export const NewCatForm = (props) => {
       </fieldset>
       <fieldset>
         <div className="form-group">
+          <label>Select cat's birthday</label>
           <input
             type="date"
             name="birthday"
@@ -155,7 +156,8 @@ export const NewCatForm = (props) => {
               )
             })}
           </select>
-          <span className="addToy" onClick={toggle}>
+          <span className="addToyText">Add New Toy</span>
+          <span className="addToyBtn" onClick={toggle}>
             +
           </span>
         </div>
