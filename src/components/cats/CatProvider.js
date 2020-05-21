@@ -6,13 +6,13 @@ export const CatProvider = (props) => {
   const [cats, setCats] = useState([])
 
   const getCats = () => {
-    return fetch('http://localhost:8088/cats')
+    return fetch('https://cativity-api.herokuapp.com/cats')
       .then((res) => res.json())
       .then(setCats)
   }
 
   const addCat = (cat) => {
-    return fetch('http://localhost:8088/cats', {
+    return fetch('https://cativity-api.herokuapp.com/cats', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -22,12 +22,12 @@ export const CatProvider = (props) => {
   }
 
   const removeCat = (cat) =>
-    fetch(`http://localhost:8088/cats/${cat.id}`, {
+    fetch(`https://cativity-api.herokuapp.com/cats/${cat.id}`, {
       method: 'DELETE',
     }).then(getCats)
 
   const updateCat = (cat) =>
-    fetch(`http://localhost:8088/cats/${cat.id}`, {
+    fetch(`https://cativity-api.herokuapp.com/cats/${cat.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

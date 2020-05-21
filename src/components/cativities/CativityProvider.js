@@ -6,13 +6,13 @@ export const CativityProvider = (props) => {
   const [cativities, setCativities] = useState([])
 
   const getCativities = () => {
-    return fetch('http://localhost:8088/cativities')
+    return fetch('https://cativity-api.herokuapp.com/cativities')
       .then((res) => res.json())
       .then(setCativities)
   }
 
   const addCativity = (cativity) => {
-    return fetch('http://localhost:8088/cativities', {
+    return fetch('https://cativity-api.herokuapp.com/cativities', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -22,12 +22,12 @@ export const CativityProvider = (props) => {
   }
 
   const removeCativity = (cativity) =>
-    fetch(`http://localhost:8088/cativities/${cativity.id}`, {
+    fetch(`https://cativity-api.herokuapp.com/cativities/${cativity.id}`, {
       method: 'DELETE',
     }).then(getCativities)
 
   const updateCativity = (cativity) =>
-    fetch(`http://localhost:8088/cativities/${cativity.id}`, {
+    fetch(`https://cativity-api.herokuapp.com/cativities/${cativity.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

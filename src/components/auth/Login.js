@@ -8,7 +8,9 @@ export const Login = (props) => {
   const password = useRef()
 
   const existingUserCheck = () => {
-    return fetch(`http://localhost:8088/users?email=${email.current.value}`)
+    return fetch(
+      `https://cativity-api.herokuapp.com/users?email=${email.current.value}`
+    )
       .then((res) => res.json())
       .then((user) => {
         if (user.length) {

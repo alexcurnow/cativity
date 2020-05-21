@@ -6,13 +6,13 @@ export const ToyProvider = (props) => {
   const [toys, setToys] = useState([])
 
   const getToys = () => {
-    return fetch('http://localhost:8088/toys')
+    return fetch('https://cativity-api.herokuapp.com/toys')
       .then((res) => res.json())
       .then(setToys)
   }
 
   const addToy = (toy) => {
-    return fetch('http://localhost:8088/toys', {
+    return fetch('https://cativity-api.herokuapp.com/toys', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ export const ToyProvider = (props) => {
   }
 
   const removeToy = (toy) =>
-    fetch(`http://localhost:8088/toys/${toy.id}`, {
+    fetch(`https://cativity-api.herokuapp.com/toys/${toy.id}`, {
       method: 'DELETE',
     }).then(getToys)
 

@@ -9,7 +9,9 @@ export const Register = (props) => {
   const verifyPassword = useRef()
 
   const existingUserCheck = () => {
-    return fetch(`http://localhost:8088/users?email=${email.current.value}`)
+    return fetch(
+      `https://cativity-api.herokuapp.com/users?email=${email.current.value}`
+    )
       .then((res) => res.json())
       .then((user) => {
         if (user.length) {
@@ -24,7 +26,7 @@ export const Register = (props) => {
 
     if (password.current.value === verifyPassword.current.value) {
       existingUserCheck().then(() => {
-        fetch('http://localhost:8088/users', {
+        fetch('https://cativity-api.herokuapp.com/users', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
